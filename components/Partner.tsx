@@ -1,0 +1,61 @@
+import react from "react";
+
+
+export default function Partner() {
+ 
+  return (
+    
+   <div className="relative w-full h-screen flex b0 px-5 justify-center overflow-hidden">
+    <div className="text-6xl text-center text-white lg:text-6xl mt-[40%] lg:mt-[10%] font-head font-semibold">
+            Our Partner Ecosystem
+          </div>
+       {/* ----  back-groud white  */}
+ {/* <div className="absolute -bottom-[50%] -mb-[50px] lg:m-0 rotate-[173deg] -left-[20%] w-[1000px] h-[900px] sm:w-[180%] sm:h-[80%] lg:h-[80%] bg-[#6CC24A]" />
+ <div className="absolute -bottom-[50%] rotate-[4deg] -left-[20%] w-[1000px] h-[800px] sm:w-[180%] lg:h-[80%] bg-white" /> */}
+       {/* ------------ */}
+      {/* ----------------edit-------------------------------- */}
+
+
+ {/* <div className="absolute -bottom-[50%] -mb-[50px] lg:m-0 rotate-[173deg] -left-[20%] w-[1000px] h-[900px] sm:w-[180%] sm:h-[80%] lg:h-[80%] bg-[#6CC24A]" />
+  <div className="absolute -bottom-[50%] rotate-[4deg] -left-[20%] w-[1000px] h-[600px] sm:w-[180%] sm:h-[70%] lg:h-[80%]    bg-white" />  */}
+
+ <div className="absolute -bottom-[50%] -mb-[50px] lg:m-0 
+rotate-[173deg] -left-[20%] 
+w-[1000px] h-[700px] 
+sm:w-[180%] sm:h-[80%] 
+lg:h-[80%] 
+bg-[#6CC24A]" />
+
+<div className="absolute -bottom-[50%] 
+rotate-[4deg] -left-[20%] 
+w-[1000px] h-[700px] 
+sm:w-[180%] sm:h-[70%] 
+lg:h-[80%] 
+bg-white" />
+
+
+
+
+
+  {/* ------------------------------------------------------------------- */}
+
+            <div className="absolute left-0 md:text-lg bottom-0 w-full mb-[4%] flex flex-col px-10">
+            <div className="text-center text-[#0A1F44] font-body font-semibold max-w-[75ch] mx-auto">
+              
+            </div>
+            <div className="text-center text-[#0A1F44] max-w-[80ch] mx-auto">
+        Fuworx partners with technology product companies as their solutions,
+        implementation, and reseller partner. We help bring products to market,
+        implement them for customers, and ensure successful adoption creating
+        value for both our partners and end customers.
+       </div>
+            </div>
+            </div>
+
+ );
+};
+
+
+
+
+

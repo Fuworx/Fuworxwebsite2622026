@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "tailwindcss";
+
+:root {
+  --background: #0a1f44;
+  --foreground: #171717;
+}
+
+@theme {
+  --font-head: "Poppins", sans-serif;
+  --font-body: "Open Sans", sans-serif;
+  --text-primary: #669bff;
+  --bg-primary: #63c7b2;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@layer Utilities {
+  .clip-your-needful-style {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+
+  .userImg {
+    @apply bg-[url('../public/userLogo.png')] bg-cover;
+  }
+
+  .flex-center {
+    @apply flex items-center;
+  }
+
+  .carrers {
+    @apply bg-[url(../public/Updated/careers.jpg)];
+  }
+
+  .term {
+    @apply bg-[url(../public/Updated/term.webp)] bg-cover bg-top bg-blend-multiply bg-[#002366]/90;
+  }
+  .policy {
+    @apply bg-[url(../public/Updated/privacy.webp)] bg-cover bg-top bg-blend-multiply bg-[#002366]/90;
+  }
+
+  .service1 {
+    @apply mask-[url(../public/servicev1.svg)];
+  }
+  .serviceBack {
+    @apply mask-[url(../public/serviceback.svg)];
+  }
+
+
+  .bg {
+    @apply bg-[url(../public/business-images/bf0ae7f92fed50739e85d75b775d1886f3e0673d.jpg)] bg-cover bg-center bg-blend-multiply bg-[#002366]/70;
+  }
+  .b0 {
+    @apply bg-[url(../public/business-images/0b53961f2a190c5eaeaefdf29a99b183d6ffe738.webp)] bg-cover bg-center bg-blend-multiply bg-[#0A1F44]/70 opacity-85;
+  }
+
+  .b1 {
+    @apply bg-[url(../public/business-images/23afbbc99bfe0e891088122331d49cd2c3ddf859.webp)] bg-cover;
+  }
+  .b2 {
+    @apply bg-[url(../public/business-images/80c4e13860af5a375f10c701a876a8dc811e778d.webp)] bg-cover;
+  }
+  .b3 {
+    @apply bg-[url(../public/business-images/5f6e3b0812d077458be5f106432f3308e4ed19a6.webp)] bg-cover;
+  }
+  .b4 {
+    @apply bg-[url(../public/business-images/59aca62733288b85e654713f51f8c0bc6bca84b6.webp)] bg-cover;
+  }
+  .b5 {
+    @apply bg-[url(../public/business-images/b912fcc45b36f05d96a94cebd8c62b48eb015169.webp)] bg-cover;
+  }
+  .b6 {
+    @apply bg-[url(../public/business-images/75cdc3042fdd084ff5a919b0b5bf1d12d3d0fbf1.webp)] bg-cover bg-center bg-blend-multiply bg-[#002366]/70;
+  }
+  .b11 {
+    @apply bg-[url(../public/business-images/385e2530bdd39e11bf842a893d532d3180b26ae5-1.webp)] bg-cover bg-center bg-blend-multiply bg-[#002366]/60;
+  }
+  .b12 {
+    @apply bg-[url(../public/business-images/db2b0ade7a6b2abfd10cdd639d412b0daf99d3d1.webp)] bg-cover bg-center bg-blend-multiply bg-[#002366]/60;
+  }
+  .b13 {
+    @apply bg-[url(../public/business-images/538691f946fca7c757f96675aacf8cd5e1d3c2f0.webp)] bg-cover bg-center bg-blend-multiply bg-[#002366]/60;
+  }
+
+  .ds0 {
+    @apply bg-[url(../public/DES-Images/DES0.webp)] bg-cover bg-center bg-blend-multiply bg-[#0A1F44]/70 opacity-85;
+  }
+
+  .ds1 {
+    @apply bg-[url(../public/DES-Images/DES1.webp)] bg-cover;
+  }
+  .ds2 {
+    @apply bg-[url(../public/DES-Images/DES2.webp)] bg-cover;
+  }
+  .ds3 {
+    @apply bg-[url(../public/DES-Images/DES3.webp)] bg-cover;
+  }
+  .ds4 {
+    @apply bg-[url(../public/DES-Images/DES4.webp)] bg-cover;
+  }
+  .ds5 {
+    @apply bg-[url(../public/DES-Images/DES5.webp)] bg-cover;
+  }
+  .ds6 {
+    @apply bg-[url(../public/DES-Images/DES6.webp)] bg-cover;
+  }
+  .ds7 {
+    @apply bg-[url(../public/DES-Images/DES7.webp)] bg-cover;
+  }
+
+  .policy {
+    @apply bg-[url(../public/Updated/policy.webp)] bg-cover bg-center bg-blend-multiply bg-[#002366]/70;
+  }
+
+  .support {
+    @apply bg-[url(../public/Updated/supports.jpg)] opacity-85;
+  }
+
+  .contact {
+    @apply bg-[url(../public/Updated/contactImg.jpg)] opacity-90;
+  }
+
+  .vision-clip {
+    clip-path: polygon(0 0, 70% 0, 30% 100%, 0 100%);
+  }
+
+  .mission-clip {
+    clip-path: polygon(70% 0, 100% 0, 100% 100%, 30% 100%);
+  }
+
+  .divider-clip {
+    clip-path: polygon(68% 0, 72% 0, 32% 100%, 28% 100%);
+  }
+
+  .business {
+    @apply bg-[url(../public/office-desk.jpg)];
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
