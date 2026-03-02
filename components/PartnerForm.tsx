@@ -1,8 +1,12 @@
+
+
 "use client";
 
 import { useState } from "react";
 
 export default function PartnerForm() {
+  const [loading, setLoading] = useState(false);
+
   const [formData, setFormData] = useState({
     company: "",
     product: "",
@@ -18,39 +22,79 @@ export default function PartnerForm() {
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { name, value, type } = e.target;
-    const checked =
-      e.target instanceof HTMLInputElement ? e.target.checked : false;
 
-    setFormData({
-      ...formData,
-      [name]: type === "checkbox" ? checked : value,
-    });
+    setFormData((prev) => ({
+      ...prev,
+      [name]:
+        type === "checkbox"
+          ? (e.target as HTMLInputElement).checked
+          : value,
+    }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formData);
-    alert("Form Submitted Successfully ✅");
+
+    if (!formData.consent) {
+      alert("Please accept consent checkbox");
+      return;
+    }
+
+    try {
+      setLoading(true);
+
+      const res = await fetch("/api/partner-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data?.error || "Something went wrong");
+      }
+
+      alert("Form Submitted Successfully ✅");
+
+      // Reset form
+      setFormData({
+        company: "",
+        product: "",
+        contact: "",
+        website: "",
+        email: "",
+        phone: "",
+        type: "",
+        consent: false,
+      });
+
+    } catch (error: any) {
+      console.error("Submit Error:", error);
+      alert(error.message || "Email sending failed ❌");
+    } finally {
+      setLoading(false);
+    }
   };
+
 
   return (
-    <section 
-    
-    className="relative bg-[#0A1F44] py-20"
-    >
-      {/* Background overlay image (optional) */}
+    <section id="PartnerForm" className="relative py-20">
+      <div className="absolute inset-0 bg bg-cover bg-center opacity-80"></div>
 
-  <div className="absolute inset-0 bg bg-cover bg-center opacity-80"></div>
       <div className="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-        {/* LEFT SIDE TEXT */}
+        
+        {/* LEFT SIDE */}
         <div className="text-white">
           <h2 className="text-5xl font-bold leading-tight mb-6">
-            Let’s Build a <br /> Strong <br />Partnership
+            Let’s Build a <br /> Strong <br /> Partnership
           </h2>
 
           <p className="text-lg text-gray-300 mb-4">
-            Join the Fuworx partner ecosystem and<br/> expand your product reach
-            through <br/>trusted implementation and resale.
+            Join the Fuworx partner ecosystem and expand your product reach
+            through trusted implementation and resale.
           </p>
 
           <p className="text-lg text-gray-300">
@@ -65,6 +109,7 @@ export default function PartnerForm() {
               type="text"
               name="company"
               placeholder="| Company Name"
+              value={formData.company}
               onChange={handleChange}
               className="bg-transparent border border-gray-400 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-green-400"
             />
@@ -73,6 +118,7 @@ export default function PartnerForm() {
               type="text"
               name="product"
               placeholder="| Product / Platform Name"
+              value={formData.product}
               onChange={handleChange}
               className="bg-transparent border border-gray-400 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-green-400"
             />
@@ -81,6 +127,7 @@ export default function PartnerForm() {
               type="text"
               name="contact"
               placeholder="| Partner Contact Name"
+              value={formData.contact}
               onChange={handleChange}
               className="bg-transparent border border-gray-400 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-green-400"
             />
@@ -89,6 +136,7 @@ export default function PartnerForm() {
               type="text"
               name="website"
               placeholder="| Website"
+              value={formData.website}
               onChange={handleChange}
               className="bg-transparent border border-gray-400 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-green-400"
             />
@@ -97,6 +145,7 @@ export default function PartnerForm() {
               type="email"
               name="email"
               placeholder="| Business Email"
+              value={formData.email}
               onChange={handleChange}
               className="bg-transparent border border-gray-400 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-green-400"
             />
@@ -105,6 +154,7 @@ export default function PartnerForm() {
               type="text"
               name="phone"
               placeholder="| Phone Number"
+              value={formData.phone}
               onChange={handleChange}
               className="bg-transparent border border-gray-400 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-green-400"
             />
@@ -112,46 +162,58 @@ export default function PartnerForm() {
 
           <select
             name="type"
+            value={formData.type}
             onChange={handleChange}
             className="w-full bg-transparent border border-gray-400 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-green-400"
           >
             <option value="" className="text-black">
               Partner Type
             </option>
-            <option value="technology" className="text-black">
-             Solutions Partner
+            <option value="Solutions Partner" className="text-black">
+              Solutions Partner
             </option>
-            <option value="reseller" className="text-black">
-            Implementation Partner 
+            <option value="Implementation Partner" className="text-black">
+              Implementation Partner
             </option>
-             <option value="reseller" className="text-black">
-              Reseller Partner 
+            <option value="Reseller Partner" className="text-black">
+              Reseller Partner
             </option>
-
           </select>
 
-          {/* Checkbox */}
           <div className="flex items-start gap-3 text-sm text-gray-300">
             <input
               type="checkbox"
               name="consent"
+              checked={formData.consent}
               onChange={handleChange}
               className="mt-1"
             />
             <p>
-              By checking this box, I provide my consent to process my submitted data and receive business communications.
+              By checking this box, I provide my consent to process my submitted
+              data and receive business communications.
             </p>
           </div>
 
-          {/* Submit Button */}
-          <button
+
+
+
+ 
+           <button
             type="submit"
+            disabled={loading}
             className="w-full md:w-1/2 bg-[#6CC24A] hover:bg-green-600 text-white font-semibold py-4 rounded-xl transition duration-300"
           >
-            Submit
+            {loading ? "Sending..." : "Submit"}
           </button>
         </form>
       </div>
     </section>
   );
+
+
 }
+
+
+
+
+ 

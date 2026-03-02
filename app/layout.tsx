@@ -1,8 +1,20 @@
+
+
 import type { Metadata } from "next";
 import "./globals.css";
 import { ReactLenis } from "@/public/lenis";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import Script from "next/script";
+import { Literata } from "next/font/google";
+
+// ✅ Configure Literata Font
+const literata = Literata({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-literata",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Fuworx Innovations",
@@ -15,14 +27,35 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <ReactLenis root>
-        <body className={`antialiased`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={literata.variable}   // attach font variable
+    >
+      <head>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-6VZK7D6WGF"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-6VZK7D6WGF');
+          `}
+        </Script>
+      </head>
+
+      {/* ✅ Apply Literata to entire website */}
+      <body className="antialiased font-literata">
+        <ReactLenis root>
           <Navigation />
           {children}
           <Footer />
-        </body>
-      </ReactLenis>
+        </ReactLenis>
+      </body>
     </html>
   );
 }

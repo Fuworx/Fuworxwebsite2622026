@@ -22,7 +22,8 @@ const Partnersus = () => {
         </div>
 
         {/* ===================== BUTTON HERE ===================== */}
-        <a href="#PartnerCards">
+        {/* <a href="#PartnerCards"> */}
+           <a href="#PartnerForm">
           <button className="bg-white w-[300px] text-center text-[18px] rounded-xl py-4 text-[#0A1F44] font-semibold hover:bg-gray-100 transition">
             Partner With Us
           </button>

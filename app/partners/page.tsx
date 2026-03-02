@@ -6,6 +6,7 @@ import Connect from "@/components/Connect";
 import PartnerCards from "@/components/PartnerCards";
 import Partnersus from "@/components/Partnersus";
 import PartnerForm from "@/components/PartnerForm";
+import PartnerColl from "@/components/PartnerColl";
 
 const Partners = () => {
   return (
@@ -21,7 +22,7 @@ const Partners = () => {
        </div>
  {/* -------------- */}
        <div className="w-full h-auto flex">
-      <Collections/>
+      <PartnerColl />
       </div>
      {/* -------------- */}
       <div className="w-full h-auto flex">
