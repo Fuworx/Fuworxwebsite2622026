@@ -31,7 +31,7 @@ export default function PartnerCards() {
                   group-hover:opacity-100 group-hover:scale-100">
               <ArrowUpRight size={24} className="md:w-6 md:h-6" />
             </div>
-            <div className="flex justify-left mb-9">
+            <div className="flex justify-left px-10  mb-9">
               <Image
                 src="/odoo_learning_partner_rgb.png"
                 alt="Odoo Logo"
@@ -47,12 +47,30 @@ export default function PartnerCards() {
             </p>
           </div>
           {/* ================= SHOPIFY CARD ================= */}
-          <div
-            // onClick={() => router.push("/shopify")}
-            className="w-full max-w-[407px] h-[216px] rounded-[13px] border border-[#B7B7B7] bg-white p-6"
-          >
 
-            <div className="  flex items-left gap-4 mb-10">
+          <div
+            //  onClick={() => router.push("/shopify")}
+            className="relative group w-full max-w-[407px] h-[216px] 
+             rounded-[13px] border border-[#B7B7B7] 
+             bg-white p-6 cursor-pointer 
+             hover:shadow-xl transition"
+          >
+            {/* Green Arrow Circle */}
+            <div
+              className="absolute right-8 top-8 bg-[#6CC24A] 
+               w-16 h-16 rounded-full 
+               flex items-center justify-center text-white shadow-md
+               opacity-0 scale-75
+               transition-all duration-300
+               group-hover:opacity-100 group-hover:scale-100"
+            >
+              <ArrowUpRight size={24} className="md:w-6 md:h-6" />
+            </div>
+
+
+
+
+            <div className="  flex items-left  justify-left gap-4 mb-10">
               <Image
                 src="/Shopify Logo_Monotone_Black_PNG.PNG"
                 alt="Shopify Logo"
@@ -72,11 +90,27 @@ export default function PartnerCards() {
             </p>
           </div>
 
+
           {/* ================= ZAPIER CARD ================= */}
           <div
             // onClick={() => router.push("/zapier")}
-            className="w-full max-w-[407px] h-[216px] rounded-[13px] border border-[#B7B7B7] bg-white p-6"
+            className="relative group w-full max-w-[407px] h-[216px] 
+             rounded-[13px] border border-[#B7B7B7] 
+             bg-white p-6 cursor-pointer 
+             hover:shadow-xl transition"
           >
+            {/* Green Arrow Circle */}
+            <div
+              className="absolute right-8 top-8 bg-[#6CC24A] 
+               w-16 h-16 rounded-full 
+               flex items-center justify-center text-white shadow-md
+               opacity-0 scale-75
+               transition-all duration-300
+               group-hover:opacity-100 group-hover:scale-100"
+            >
+              <ArrowUpRight size={24} className="md:w-6 md:h-6" />
+            </div>
+
 
             <div className="flex items-left gap-4 mb-4">
               <Image

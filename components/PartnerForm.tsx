@@ -1,11 +1,12 @@
 
-
 "use client";
 
 import { useState } from "react";
 
 export default function PartnerForm() {
   const [loading, setLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const [formData, setFormData] = useState({
     company: "",
@@ -35,8 +36,11 @@ export default function PartnerForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    setSuccessMessage("");
+    setErrorMessage("");
+
     if (!formData.consent) {
-      alert("Please accept consent checkbox");
+      setErrorMessage("Please accept consent checkbox");
       return;
     }
 
@@ -57,7 +61,8 @@ export default function PartnerForm() {
         throw new Error(data?.error || "Something went wrong");
       }
 
-      alert("Form Submitted Successfully ✅");
+      //  Show success message below form
+      setSuccessMessage("Form Submitted Successfully ✅");
 
       // Reset form
       setFormData({
@@ -73,19 +78,18 @@ export default function PartnerForm() {
 
     } catch (error: any) {
       console.error("Submit Error:", error);
-      alert(error.message || "Email sending failed ❌");
+      setErrorMessage(error.message || "Email sending failed ❌");
     } finally {
       setLoading(false);
     }
   };
-
 
   return (
     <section id="PartnerForm" className="relative py-20">
       <div className="absolute inset-0 bg bg-cover bg-center opacity-80"></div>
 
       <div className="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-        
+
         {/* LEFT SIDE */}
         <div className="text-white">
           <h2 className="text-5xl font-bold leading-tight mb-6">
@@ -194,26 +198,29 @@ export default function PartnerForm() {
             </p>
           </div>
 
-
-
-
- 
-           <button
+          <button
             type="submit"
             disabled={loading}
             className="w-full md:w-1/2 bg-[#6CC24A] hover:bg-green-600 text-white font-semibold py-4 rounded-xl transition duration-300"
           >
             {loading ? "Sending..." : "Submit"}
           </button>
+
+          {/* Success Message */}
+          {successMessage && (
+            <p className="text-green-400 font-semibold mt-4">
+              {successMessage}
+            </p>
+          )}
+
+          {/*  Error Message */}
+          {errorMessage && (
+            <p className="text-red-400 font-semibold mt-4">
+              {errorMessage}
+            </p>
+          )}
         </form>
       </div>
     </section>
   );
-
-
 }
-
-
-
-
- 
