@@ -32,7 +32,7 @@ export default function PartnerCards() {
               <ArrowUpRight size={24} className="md:w-6 md:h-6" />
             </div>
             <div className="flex justify-left px-10  mb-9">
-              <Image
+              <img
                 src="/odoo_learning_partner_rgb.png"
                 alt="Odoo Logo"
                 width={120}
@@ -71,7 +71,7 @@ export default function PartnerCards() {
 
 
             <div className="  flex items-left  justify-left gap-4 mb-10">
-              <Image
+              <img
                 src="/Shopify Logo_Monotone_Black_PNG.PNG"
                 alt="Shopify Logo"
                 width={186}
@@ -113,7 +113,7 @@ export default function PartnerCards() {
 
 
             <div className="flex items-left gap-4 mb-4">
-              <Image
+              <img
                 src="/Untitled design.png"
                 alt="Zapier Logo"
                 width={210}

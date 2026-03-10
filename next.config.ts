@@ -3,6 +3,12 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
+
+  // turn off optimization for all images
+  images: {
+    unoptimized: true,
+  },
+
   allowedDevOrigins: ["http://localhost:3000"],
   async redirects() {
     return [
