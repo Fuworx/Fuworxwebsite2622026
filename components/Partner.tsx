@@ -11,15 +11,15 @@ export default function Partner() {
     //           Our Partner Ecosystem
     //         </div>
     //  <div className="relative w-full h-screen flex b0 bg-[#0A1F44]/15  bg-top justify-center overflow-hidden   ">
-    <div className="relative w-full h-screen flex  bg-top justify-center overflow-hidden  ">
-      <div className="absolute inset-0 b0 bg-cover bg-top"></div>
+    <div className="relative w-full h-screen flex min-w-full bg-top justify-center overflow-hidden  ">
+      <div className="absolute inset-0 b0 bg-cover bg-top min-w-full"></div>
 
       {/* Dark Overlay 15% */}
-      <div className="absolute inset-0 bg-black opacity-15"></div>
+      <div className="absolute inset-0 bg-black min-w-full opacity-15"></div>
 
       <div
         className="relative z-10 text-white w-[816px]  
-                      h-[74px]  mt-[40%] lg:mt-[10%] mt-253px font-head lg:text-5xl font-extrabold font-literata text-center text-5xl py-20 tracking-normal  text-[50px] leading-[63.11px]  "
+                      h-[74px]  mt-[40%] lg:mt-[10%] mt-253px font-head lg:text-5xl font-extrabold font-literata text-center text-5xl py-20 tracking-normal  text-[50px] leading-[63.11px] min-w-full "
       >
         Our Partner Ecosystem
       </div>
@@ -38,7 +38,7 @@ rotate-[173deg] -left-[20%]
 w-[1000px] h-[700px] 
 sm:w-[180%] sm:h-[80%] 
 lg:h-[80%] 
-bg-[#91B706]"
+bg-[#91B706] min-w-full"
       />
 
       <div
@@ -47,7 +47,7 @@ rotate-[4deg] -left-[20%]
 w-[1000px] h-[700px] 
 sm:w-[180%] sm:h-[70%] 
 lg:h-[80%] 
-bg-white"
+bg-white min-w-full"
       />
 
       <div className="absolute left-0 md:text-lg bottom-0 w-full mb-[4%] flex flex-col px-10">
