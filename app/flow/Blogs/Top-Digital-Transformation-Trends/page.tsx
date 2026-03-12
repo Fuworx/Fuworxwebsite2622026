@@ -1,32 +1,83 @@
+"use client";
+
+import Connect from "@/components/Connect"
+import FlowBlog from "@/components/FlowBlog"
+import { ArrowUp, Home } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
+import { useEffect, useState } from "react";
+
+export default function TopDigitalTransformationTrends() {
 
 
+  const [showArrow, setShowArrow] = useState(false);
 
-import Connect from "@/components/Connect";
-import Image from "next/image";
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        setShowArrow(true);
+      } else {
+        setShowArrow(false);
+      }
+    };
 
-export default function Blog5() {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }
   return (
-    <div className="max-w-7xl mx-auto px-6 py-12 bg-white leading-relaxed">
 
-      {/* HERO IMAGE */}
-      <div className="relative w-full h-[420px]">
-        <Image
-          src="/Blog 5 Sub.png"
-          alt="Blog 5"
-          fill
-          className="object-cover rounded-[20px]"
-        />
+    <div>
+
+      <div className="w-full bg-[#0A1F44] h-[80px] flex items-center relative mt-[120px]">
+
+        <div className="w-full max-w-[1440px] mx-auto px-25 flex items-center text-white text-base gap-3">
+
+          <a
+            href="/"
+            className="flex items-center gap-2 hover:text-green-400 cursor-pointer"
+          >
+            < Home size={18} />
+          </a>
+
+          <Link
+            href="/flow/Blogs"
+            className="hover:text-green-400"
+          >
+            Blogs
+          </Link>
+
+          <span className="text-gray-300 ">{">"}</span>
+
+          <span className="text-gray-200">Top Digital Transformation Trends</span>
+
+        </div>
+
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 py-16">
 
-        {/* BLOG LABEL */}
-        <p className="text-gray-500 text-sm mb-2">Blog 5</p>
+      <div className="mx-auto text-xl px-20 py-1 bg-white leading-relaxed ">
 
-        {/* TITLE */}
-        <h1 className="text-4xl font-bold mb-6">
+        <div className="w-full   text-xl mx-auto px-6 py-10">
+
+          <h1 className="text-4xl font-bold leading-tight mb-6">
           Top Digital Transformation Trends Businesses Should Watch
-        </h1>
+          </h1>
+
+          <div className="relative w-full h-[420px] ">
+            <Image
+              src="/blog5-sub.png"
+              alt="Blog 5"
+              fill
+              className="object-cover rounded-[20px]"
+            />
+          </div>
+
 
         <p className="text-gray-600 mb-2">Reading Time: 6–7 minutes</p>
         <p className="text-gray-600 mb-2">
@@ -323,12 +374,23 @@ export default function Blog5() {
           <li>Mobile application development</li>
           <li>Scalable technology architecture for modern businesses</li>
         </ul>
-
-        <div className="w-full h-auto flex">
-          <Connect />
-        </div>
+</div>
+        
 
       </div>
+
+      <div className="w-full h-auto flex">
+          <Connect />
+        </div>
+        {/* Arrow Button */}
+      {showArrow && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 bg-[#59e023] hover:bg-orange-500 text-white p-4 rounded-full shadow-lg transition duration-300"
+        >
+          <ArrowUp size={22} />
+        </button>
+      )}
     </div>
   );
 }

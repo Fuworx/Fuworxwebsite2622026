@@ -1,41 +1,94 @@
+"use client";
+
+import Connect from "@/components/Connect"
+import FlowBlog from "@/components/FlowBlog"
+import { ArrowUp, Home } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
+import { useEffect, useState } from "react";
+
+export default function SmartManufacturingTheFuture() {
 
 
-import Connect from "@/components/Connect";
-import Image from "next/image";
+  const [showArrow, setShowArrow] = useState(false);
 
-export default function Blog6() {
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        setShowArrow(true);
+      } else {
+        setShowArrow(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }
   return (
-    <div className="max-w-7xl mx-auto px-6 py-12 bg-white leading-relaxed">
 
-      {/* HERO IMAGE */}
-      <div className="relative w-full h-[420px]">
-        <Image
-          src="/Blog 6 Sub.png"
-          alt="Blog 6"
-          fill
-          className="object-cover rounded-[20px]"
-        />
+    <div>
+
+      <div className="w-full bg-[#0A1F44] h-[80px] flex items-center relative mt-[120px]">
+
+        <div className="w-full max-w-[1440px] mx-auto px-25 flex items-center text-white text-base gap-3">
+
+          <a
+            href="/"
+            className="flex items-center gap-2 hover:text-green-400 cursor-pointer"
+          >
+            < Home size={18} />
+          </a>
+
+          <Link
+            href="/flow/Blogs"
+            className="hover:text-green-400"
+          >
+            Blogs
+          </Link>
+
+          <span className="text-gray-300 ">{">"}</span>
+
+          <span className="text-gray-200">Smart Manufacturing: The Future</span>
+
+        </div>
+
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 py-16">
 
-        {/* BLOG LABEL */}
-        <p className="text-gray-500 text-sm mb-2">Blog 6</p>
+      <div className="mx-auto text-xl px-20 py-1 bg-white leading-relaxed ">
 
-        {/* TITLE */}
-        <h1 className="text-4xl font-bold mb-4">
-          Smart Manufacturing: The Future of Industry Operations
-        </h1>
+        <div className="w-full   text-xl mx-auto px-6 py-10">
 
-        <p className="text-sm mb-1">
+          <h1 className="text-4xl font-bold leading-tight mb-6">
+            Smart Manufacturing: The Future of Industry Operations
+          </h1>
+
+          <div className="relative w-full h-[420px] ">
+            <Image
+              src="/blog6-sub.png"
+              alt="Blog 6"
+              fill
+              className="object-cover rounded-[20px]"
+            />
+          </div>
+
+     
+
+        <p className=" mb-1">
           <span className="font-semibold">Reading Time:</span> 6–7 minutes
         </p>
 
-        <p className="text-sm mb-1">
+        <p className=" mb-1">
           <span className="font-semibold">Category:</span> Digital Transformation | Manufacturing | Industry Innovation
         </p>
 
-        <p className="text-sm mb-8">
+        <p className=" mb-8">
           <span className="font-semibold">Author:</span> Fuworx Insights Team
         </p>
 
@@ -230,11 +283,22 @@ export default function Blog6() {
           <li>Scalable technology architecture for modern enterprises</li>
         </ul>
 
+      </div>
+      </div>
+
         <div className="w-full h-auto flex">
           <Connect />
         </div>
 
-      </div>
+         {/* Arrow Button */}
+      {showArrow && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 bg-[#59e023] hover:bg-orange-500 text-white p-4 rounded-full shadow-lg transition duration-300"
+        >
+          <ArrowUp size={22} />
+        </button>
+      )}
     </div>
   );
 }

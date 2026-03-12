@@ -95,7 +95,14 @@ function Navigation() {
     { name: "Product", link: "/product", active: false },
     { name: "Partners", link: "/partners", active: false },
     { name: "Careers", link: "/careers", active: false },
-    { name: "Flow", link: "/flow", active: false },
+    { name: "Flow", link: "/flow", 
+       subMenu: [
+        { name: "Blogs", link: "/Blogs" },
+        { name: "Case Study", link: "/CaseStudy" },
+      ],
+      
+      active: false },
+    
   ];
 
   return (

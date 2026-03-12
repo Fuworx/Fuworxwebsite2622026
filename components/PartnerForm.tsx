@@ -19,17 +19,28 @@ export default function PartnerForm() {
     consent: false,
   });
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
+  // const handleChange = (
+  //   e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  // ) => {
+  //   const { name, value, type } = e.target;
+
+  //   setFormData((prev) => ({
+  //     ...prev,
+  //     [name]:
+  //       type === "checkbox"
+  //         ? (e.target as HTMLInputElement).checked
+  //         : value,
+  //   }));
+  // };
+
+
+
+    const handleChange = (e: any) => {
     const { name, value, type } = e.target;
 
     setFormData((prev) => ({
       ...prev,
-      [name]:
-        type === "checkbox"
-          ? (e.target as HTMLInputElement).checked
-          : value,
+      [name]: type === "checkbox" ? e.target.checked : value,
     }));
   };
 
@@ -86,7 +97,8 @@ export default function PartnerForm() {
 
   return (
     <section id="PartnerForm" className="relative py-20">
-      <div className="absolute inset-0 bg bg-cover bg-center opacity-80"></div>
+      <div className="absolute inset-0 w-[1815px]  bg bg-cover bg-center opacity-80"></div>
+    
 
       <div className="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 

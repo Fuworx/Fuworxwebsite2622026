@@ -21,7 +21,7 @@ const nextConfig: NextConfig = {
         source: "/about",
         destination: "/about/aboutUs",
         permanent: true, // 308 status code
-      },
+      }, 
     ];
   },
 };

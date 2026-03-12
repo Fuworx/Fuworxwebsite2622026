@@ -5,6 +5,8 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Connect from "./Connect";
+import { FaWhatsapp, FaLinkedin, FaShareAlt } from "react-icons/fa";
+import { Link } from "lucide-react";
 
 export default function FlowBlog() {
   const router = useRouter();
@@ -12,54 +14,66 @@ export default function FlowBlog() {
   const blogs = [
     {
       title: "D2C E-Commerce: How Brands Are Redefining Digital Commerce ",
-      image: "/Blog 1 main.png",
-      link: "/Blog1",
+      image: "/blog1-main.png",
+      link: "/flow/Blogs/The-Future-of-D2C-E-Commerce",
+
+
+
     },
     {
       title: "The Complete Digital Transformation Roadmap for Modern Businesses ",
-      image: "/Blog 2 main.png",
-      link: "/Blog2",
+      image: "/blog2-main.png",
+      link: "/flow/Blogs/The-Complete-Digital-Transformation",
     },
     {
       title: "The Hidden Cost of Manual Operations Many businesses",
-      image: "/Blog 3 main.png",
-      link: "/Blog3",
+      image: "/blog3-main.png",
+      link: "/flow/Blogs/The-Hidden-Cost-of-Manual-Operations",
     },
     {
       title: "Omnichannel Commerce: Why Businesses Must Sell Everywhere ",
-      image: "/Blog 4 main.png",
-      link: "/Blog4",
+      image: "/blog4-main.png",
+      link: "/flow/Blogs/Omnichannel-Commerce",
     },
     {
       title: "Top Digital Transformation Trends Businesses Should Watch",
-      image: "/Blog 5 main.png",
-      link: "/Blog5",
+      image: "/blog5-main.png",
+      link: "/flow/Blogs/Top-Digital-Transformation-Trends",
     },
     {
       title: "Smart Manufacturing: The Future of Industry Operations ",
-      image: "/Blog 6 main.png",
-      link: "/Blog6",
+      image: "/blog6-main.png",
+      link: "/flow/Blogs/Smart-Manufacturing-The-Future",
     },
   ];
-
+  {
+    blogs.map((blog, index) => (
+      <Link key={index} href={'/flow/Blogs/Blog'}>
+        <div>{blog.title}</div>
+      </Link>
+    ))
+  }
   const navigateToContact = () => {
     router.push("/contact");
   };
+
+  const shareUrl =
+    typeof window !== "undefined" ? window.location.href : "";
 
   return (
     <div className="relative min-h-screen bg-white">
 
       {/* Background Image */}
+
       <div
-        className="absolute top-[77px] left-0 w-full h-[325px] bg-cover bg-center z-0"
+        className="absolute top-[77px] left-0 w-full h-[455px] bg-cover bg-center z-0"
         style={{
           backgroundImage:
             "url('/46d981b42179b415df8f52b0cef0882b81324b31.jpg')",
         }}
-      />
-
-      {/* Light Blue Overlay */}
-      <div className="absolute top-[77px] left-0 w-full h-[325px] bg-blue-200/50"></div>
+      >
+        <div className="absolute inset-0 bg-[#0A2540]/80"></div>
+      </div>
 
 
       {/* Content Wrapper (normal flow) */}
@@ -70,7 +84,7 @@ export default function FlowBlog() {
           className="font-extrabold text-[50px] text-center leading-[70px] tracking-[-0.6px] text-black"
           style={{ fontFamily: "Literata" }}
         >
-          Case Study
+          Blogs
         </h2>
 
         {/* Image */}
@@ -83,14 +97,7 @@ export default function FlowBlog() {
         </div>
 
 
-        {/* Title */}
-        <a
-          href="#"
-          className="block mt-4 text-[32px] leading-[44px] tracking-[-0.4px] font-bold hover:underline bg-white"
-          style={{ fontFamily: "Literata" }}
-        >
-          Intelligent AP Invoice Automation for a Global Mining Enterprise
-        </a>
+
 
         {/* Categories Button */}
         <div className="flex justify-end mt-10">
@@ -120,7 +127,7 @@ export default function FlowBlog() {
               <div
                 key={index}
                 onClick={() => router.push(blog.link)}
-                className="w-[380px] h-[290px] bg-white rounded-[16px] border border-[#666D803D] p-4 flex flex-col gap-4 hover:shadow-lg transition duration-300 cursor-pointer"
+                className="w-[380px] h-[290px] bg-white rounded-[16px] border  p-4 flex flex-col gap-4 hover:shadow-lg transition duration-300   hover:text-blue-400 cursor-pointer"
               >
 
                 {/* Image */}
@@ -134,22 +141,69 @@ export default function FlowBlog() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg font-semibold text-gray-900 leading-snug">
+                {/* <h3 className="text-lg font-semibold text-gray-900 leading-snug">
                   {blog.title}
-                </h3>
+                </h3> */}
+
+                <a href={blog.link}>
+                  <h3 className="text-lg font-semibold text-gray-900 cursor-pointer">
+                    {blog.title}
+                  </h3>
+                </a>
 
                 {/* Bottom Row */}
                 <div className="flex justify-between items-center pt-2">
 
                   {/* Learn More */}
-                  <span className="text-blue-600 font-medium text-sm">
+                  <span className=" text-black  hover:underline font-medium text-sm">
                     Learn More →
                   </span>
 
-                  {/* Share */}
-                  <span className="font-medium text-black">
-                    Share 🔗
-                  </span>
+                  {/* <a href="/flow/blogs/blog1/d2c-e-commerce-how-brands-are-redefining">
+  Learn More →
+</a> */}
+
+
+
+
+                  <div className="relative  flex items-center group">
+
+                    {/* Icons (hidden by default) */}
+                    <div className="flex items-center gap-3 mr-2 opacity-0 translate-x-4 
+                        group-hover:opacity-100 group-hover:translate-x-0 
+                        transition-all duration-300">
+
+                      {/* LinkedIn */}
+                      <a
+                        href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+                          shareUrl
+                        )}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-[#0A1F44] text-white p-3 rounded-full hover:bg-blue-700"
+                      >
+                        <FaLinkedin />
+                      </a>
+
+                      {/* WhatsApp */}
+                      <a
+                        href={`https://wa.me/?text=${encodeURIComponent(shareUrl)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-[#0A1F44] text-white p-3 rounded-full hover:bg-green-600"
+                      >
+                        <FaWhatsapp />
+                      </a>
+
+                    </div>
+
+                    {/* Share Button */}
+                    <span className="flex items-center gap-2 hover:underline  text-black font-medium">
+                      Share
+                      <FaShareAlt />
+                    </span>
+
+                  </div>
 
                 </div>
 
@@ -171,3 +225,6 @@ export default function FlowBlog() {
     </div>
   );
 }
+
+
+
