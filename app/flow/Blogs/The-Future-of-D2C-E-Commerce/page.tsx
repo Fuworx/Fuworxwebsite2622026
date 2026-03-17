@@ -6,11 +6,13 @@ import { ArrowUp, Home } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react";
+import { FaLinkedin, FaWhatsapp } from "react-icons/fa6";
 
 export default function TheFutureofD2CECommerce() {
 
 
   const [showArrow, setShowArrow] = useState(false);
+  const [shareUrl, setShareUrl] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +25,10 @@ export default function TheFutureofD2CECommerce() {
 
     window.addEventListener("scroll", handleScroll);
 
+    if (typeof window !== "undefined") {
+      setShareUrl(window.location.href);
+    }
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -30,9 +36,36 @@ export default function TheFutureofD2CECommerce() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" })
   }
+
+  // ✅ Share Links
+  const linkedIn = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+    shareUrl
+  )}`;
+
+  const whatsapp = `https://wa.me/?text=${encodeURIComponent(
+    shareUrl
+  )}`;
   return (
 
     <div>
+
+      {/* ✅ RIGHT SIDE SHARE BAR */}
+      <div className="fixed right-0 top-1/2 -translate-y-1/2 z-50">
+        <div className="bg-[#0A1F44] rounded-l-xl flex flex-col items-center py-4 px-3 gap-4 shadow-lg">
+          <a href={linkedIn} target="_blank">
+            <FaLinkedin className="text-white hover:text-green-400" size={20} />
+          </a>
+
+          <a href={whatsapp} target="_blank">
+            <FaWhatsapp
+              className="text-white hover:text-green-400"
+              size={20}
+            />
+
+          
+          </a>
+        </div>
+      </div>
 
       <div className="w-full bg-[#0A1F44] h-[80px] flex items-center relative mt-[120px]">
 
@@ -363,7 +396,7 @@ export default function TheFutureofD2CECommerce() {
             <li>Data and analytics-driven commerce infrastructure</li>
           </ul>
 
-{/* Connect---------------- */}
+          {/* Connect---------------- */}
 
         </div>
       </div>

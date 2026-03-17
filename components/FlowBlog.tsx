@@ -6,7 +6,9 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Connect from "./Connect";
 import { FaWhatsapp, FaLinkedin, FaShareAlt } from "react-icons/fa";
-import { Link } from "lucide-react";
+// import { Link } from "lucide-react";
+import Link from "next/link";
+import { ChevronDown } from "lucide-react";
 
 export default function FlowBlog() {
   const router = useRouter();
@@ -81,7 +83,7 @@ export default function FlowBlog() {
 
         {/* Heading */}
         <h2
-          className="font-extrabold text-[50px] text-center leading-[70px] tracking-[-0.6px] text-black"
+          className="font-extrabold text-[50px] text-center leading-[70px] tracking-[-0.6px] text-white"
           style={{ fontFamily: "Literata" }}
         >
           Blogs
@@ -174,9 +176,22 @@ export default function FlowBlog() {
                         transition-all duration-300">
 
                       {/* LinkedIn */}
-                      <a
+                      {/* <a
                         href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
                           shareUrl
+                        )}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-[#0A1F44] text-white p-3 rounded-full hover:bg-blue-700"
+                      >
+                        <FaLinkedin />
+                      </a> */}
+
+                      <a
+                        href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+                          typeof window !== "undefined"
+                            ? window.location.origin + blog.link
+                            : blog.link
                         )}`}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -186,8 +201,23 @@ export default function FlowBlog() {
                       </a>
 
                       {/* WhatsApp */}
-                      <a
+                      {/* <a
                         href={`https://wa.me/?text=${encodeURIComponent(shareUrl)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-[#0A1F44] text-white p-3 rounded-full hover:bg-green-600"
+                      >
+                        <FaWhatsapp />
+                      </a> */}
+
+
+          
+
+
+                      <a
+                        href={`https://wa.me/?text=${encodeURIComponent(
+                          blog.title + "\n" + window.location.origin + blog.link
+                        )}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="bg-[#0A1F44] text-white p-3 rounded-full hover:bg-green-600"
@@ -216,6 +246,13 @@ export default function FlowBlog() {
 
       </section>
 
+
+      <div className="w-full flex justify-center py-10 bg-white">
+        <button className="flex items-center gap-2 px-6 py-3 border border-[#0A1F44] text-[#0A1F44] rounded-full hover:bg-[#0A1F44] hover:text-white transition duration-300">
+          Load more
+          <ChevronDown size={18} />
+        </button>
+      </div>
 
       <div className="w-full h-auto flex">
         <Connect />

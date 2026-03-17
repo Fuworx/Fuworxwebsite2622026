@@ -98,7 +98,7 @@ function Navigation() {
     { name: "Flow", link: "/flow", 
        subMenu: [
         { name: "Blogs", link: "/Blogs" },
-        { name: "Case Study", link: "/CaseStudy" },
+        { name: "Case Studies", link: "/CaseStudy" },
       ],
       
       active: false },
