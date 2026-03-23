@@ -1,13 +1,10 @@
 
-
 "use client";
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Connect from "./Connect";
 import { FaWhatsapp, FaLinkedin, FaShareAlt } from "react-icons/fa";
-// import { Link } from "lucide-react";
-import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 
 export default function FlowBlog() {
@@ -18,12 +15,10 @@ export default function FlowBlog() {
       title: "D2C E-Commerce: How Brands Are Redefining Digital Commerce ",
       image: "/blog1-main.png",
       link: "/flow/Blogs/The-Future-of-D2C-E-Commerce",
-
-
-
     },
     {
-      title: "The Complete Digital Transformation Roadmap for Modern Businesses ",
+      title:
+        "The Complete Digital Transformation Roadmap for Modern Businesses ",
       image: "/blog2-main.png",
       link: "/flow/Blogs/The-Complete-Digital-Transformation",
     },
@@ -33,40 +28,35 @@ export default function FlowBlog() {
       link: "/flow/Blogs/The-Hidden-Cost-of-Manual-Operations",
     },
     {
-      title: "Omnichannel Commerce: Why Businesses Must Sell Everywhere ",
+      title:
+        "Omnichannel Commerce: Why Businesses Must Sell Everywhere ",
       image: "/blog4-main.png",
       link: "/flow/Blogs/Omnichannel-Commerce",
     },
     {
-      title: "Top Digital Transformation Trends Businesses Should Watch",
+      title:
+        "Top Digital Transformation Trends Businesses Should Watch",
       image: "/blog5-main.png",
       link: "/flow/Blogs/Top-Digital-Transformation-Trends",
     },
     {
-      title: "Smart Manufacturing: The Future of Industry Operations ",
+      title:
+        "Smart Manufacturing: The Future of Industry Operations ",
       image: "/blog6-main.png",
       link: "/flow/Blogs/Smart-Manufacturing-The-Future",
     },
   ];
-  {
-    blogs.map((blog, index) => (
-      <Link key={index} href={'/flow/Blogs/Blog'}>
-        <div>{blog.title}</div>
-      </Link>
-    ))
-  }
-  const navigateToContact = () => {
-    router.push("/contact");
-  };
 
-  const shareUrl =
-    typeof window !== "undefined" ? window.location.href : "";
+  // ✅ PRODUCTION SAFE BASE URL
+  const baseUrl =
+    typeof window !== "undefined"
+      ? window.location.origin
+      : process.env.NEXT_PUBLIC_SITE_URL || "";
 
   return (
     <div className="relative min-h-screen bg-white">
 
       {/* Background Image */}
-
       <div
         className="absolute top-[77px] left-0 w-full h-[455px] bg-cover bg-center z-0"
         style={{
@@ -77,8 +67,7 @@ export default function FlowBlog() {
         <div className="absolute inset-0 bg-[#0A2540]/80"></div>
       </div>
 
-
-      {/* Content Wrapper (normal flow) */}
+      {/* Content */}
       <div className="relative pt-[188px] max-w-[1200px] mx-auto px-9 z-0">
 
         {/* Heading */}
@@ -98,12 +87,9 @@ export default function FlowBlog() {
           />
         </div>
 
-
-
-
         {/* Categories Button */}
         <div className="flex justify-end mt-10">
-          <button className="flex items-center gap-3 border border-[#1e2b4a] text-[#1e2b4a] px-10 py-4 rounded-full text-lg font-medium hover:bg-[#1e2b4a] hover:text-white transition bg-white" >
+          <button className="flex items-center gap-3 border border-[#1e2b4a] text-[#1e2b4a] px-10 py-4 rounded-full text-lg font-medium hover:bg-[#1e2b4a] hover:text-white transition bg-white">
             Categories
             <div className="grid grid-cols-2 gap-1">
               <span className="w-2 h-2 border border-current rounded-sm"></span>
@@ -113,23 +99,18 @@ export default function FlowBlog() {
             </div>
           </button>
         </div>
-
       </div>
 
-
-      {/* Blog Cards Section */}
-
+      {/* Blog Cards */}
       <section className="bg-white py-10 mt-10">
-
-        <div className="max-w-6xl mx-auto ">
-
-          <div className="grid md:grid-cols-3 gap-14 ">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-14">
 
             {blogs.map((blog, index) => (
               <div
                 key={index}
                 onClick={() => router.push(blog.link)}
-                className="w-[380px] h-[290px] bg-white rounded-[16px] border  p-4 flex flex-col gap-4 hover:shadow-lg transition duration-300   hover:text-blue-400 cursor-pointer"
+                className="w-[380px] h-[290px] bg-white rounded-[16px] border p-4 flex flex-col gap-4 hover:shadow-lg transition duration-300 hover:text-blue-400 cursor-pointer"
               >
 
                 {/* Image */}
@@ -143,10 +124,6 @@ export default function FlowBlog() {
                 </div>
 
                 {/* Title */}
-                {/* <h3 className="text-lg font-semibold text-gray-900 leading-snug">
-                  {blog.title}
-                </h3> */}
-
                 <a href={blog.link}>
                   <h3 className="text-lg font-semibold text-gray-900 cursor-pointer">
                     {blog.title}
@@ -157,41 +134,22 @@ export default function FlowBlog() {
                 <div className="flex justify-between items-center pt-2">
 
                   {/* Learn More */}
-                  <span className=" text-black  hover:underline font-medium text-sm">
+                  <span className="text-black hover:underline font-medium text-sm">
                     Learn More →
                   </span>
 
-                  {/* <a href="/flow/blogs/blog1/d2c-e-commerce-how-brands-are-redefining">
-  Learn More →
-</a> */}
+                  {/* Share Section */}
+                  <div className="relative flex items-center group">
 
-
-
-
-                  <div className="relative  flex items-center group">
-
-                    {/* Icons (hidden by default) */}
+                    {/* Icons */}
                     <div className="flex items-center gap-3 mr-2 opacity-0 translate-x-4 
-                        group-hover:opacity-100 group-hover:translate-x-0 
-                        transition-all duration-300">
+                      group-hover:opacity-100 group-hover:translate-x-0 
+                      transition-all duration-300">
 
                       {/* LinkedIn */}
-                      {/* <a
-                        href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-                          shareUrl
-                        )}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-[#0A1F44] text-white p-3 rounded-full hover:bg-blue-700"
-                      >
-                        <FaLinkedin />
-                      </a> */}
-
                       <a
                         href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-                          typeof window !== "undefined"
-                            ? window.location.origin + blog.link
-                            : blog.link
+                          baseUrl + blog.link
                         )}`}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -201,22 +159,9 @@ export default function FlowBlog() {
                       </a>
 
                       {/* WhatsApp */}
-                      {/* <a
-                        href={`https://wa.me/?text=${encodeURIComponent(shareUrl)}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-[#0A1F44] text-white p-3 rounded-full hover:bg-green-600"
-                      >
-                        <FaWhatsapp />
-                      </a> */}
-
-
-          
-
-
                       <a
                         href={`https://wa.me/?text=${encodeURIComponent(
-                          blog.title + "\n" + window.location.origin + blog.link
+                          blog.title + "\n" + baseUrl + blog.link
                         )}`}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -228,25 +173,22 @@ export default function FlowBlog() {
                     </div>
 
                     {/* Share Button */}
-                    <span className="flex items-center gap-2 hover:underline  text-black font-medium">
+                    <span className="flex items-center gap-2 hover:underline text-black font-medium">
                       Share
                       <FaShareAlt />
                     </span>
 
                   </div>
-
                 </div>
 
               </div>
             ))}
 
           </div>
-
         </div>
-
       </section>
 
-
+      {/* Load More */}
       <div className="w-full flex justify-center py-10 bg-white">
         <button className="flex items-center gap-2 px-6 py-3 border border-[#0A1F44] text-[#0A1F44] rounded-full hover:bg-[#0A1F44] hover:text-white transition duration-300">
           Load more
@@ -254,14 +196,11 @@ export default function FlowBlog() {
         </button>
       </div>
 
+      {/* Connect */}
       <div className="w-full h-auto flex">
         <Connect />
       </div>
 
-
     </div>
   );
 }
-
-
-
