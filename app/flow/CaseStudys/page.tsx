@@ -110,7 +110,7 @@ export default function CaseStudys() {
               <div
                 key={index}
                 onClick={() => router.push(item.link)}
-                className="w-[380px] h-[290px] bg-white rounded-[16px] border p-4 flex flex-col gap-4 hover:shadow-lg transition duration-300 cursor-pointer"
+                className="w-[380px] h-[290px] bg-white rounded-[16px] border p-4 flex flex-col gap-4 hover:shadow-lg transition duration-300  hover:text-blue-400 cursor-pointer"
               >
 
                 {/* Image */}
