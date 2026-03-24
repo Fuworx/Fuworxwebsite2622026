@@ -53,25 +53,31 @@ export default function DrivingOperationalExcellenceinHealthTech() {
       <div className="w-full bg-[#0A1F44] h-[80px] flex items-center mt-[120px]">
         <div className="w-full max-w-[1440px] mx-auto px-25 flex items-center text-white gap-3">
 
-          <Link href="/" className="hover:text-green-400">
+          {/* <Link href="/" className="hover:text-green-400">
             <Home size={18} />
-          </Link>
+          </Link> */}
+           <a
+            href="/"
+            className="flex items-center gap-2 hover:text-green-400 cursor-pointer"
+          >
+            < Home size={18} />
+          </a>
 
-          <Link href="/flow/casestudies" className="hover:text-green-400">
-            Case Studies
+          <Link href="/flow/CaseStudys" className="hover:text-green-400">
+          CaseStudys
           </Link>
 
           <span>{">"}</span>
 
-          <span>Case Study 2</span>
+          <span>Driving Operational Excellence in HealthTech</span>
 
         </div>
       </div>
 
       {/* CONTENT */}
-      <div className="mx-auto text-xl px-20 py-1 bg-white leading-relaxed">
+      <div className="mx-auto text-xl px-20 py-1 bg-white leading-relaxed font-openSans">
 
-        <div className="w-full text-l mx-auto px-6 py-10">
+        <div className="w-full text-l mx-auto px-6 py-10 font-openSans">
 
           <h1 className="text-4xl font-bold mb-6">
             Driving Operational Excellence in HealthTech with HMS

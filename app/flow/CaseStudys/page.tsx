@@ -10,7 +10,7 @@ import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import Connect from "@/components/Connect";
 
-export default function CaseStudy() {
+export default function CaseStudys() {
   const router = useRouter();
 
   // ✅ FIX: base URL for SSR-safe usage
@@ -26,32 +26,32 @@ export default function CaseStudy() {
     {
       title: "How a Fashion Brand Achieved 2X Growth",
       image: "/casestudy1-main.png",
-      link: "/flow/CaseStudy/How-a-Fashion-Brand-Achieved-2X-Growth",
+      link: "/flow/CaseStudys/How-a-Fashion-Brand-Achieved-2X-Growth",
     },
     {
       title: "Driving Operational Excellence in HealthTech with",
       image: "/casestudy2-main.png",
-      link: "/flow/CaseStudy/Driving-Operational-Excellence-in-HealthTech",
+      link: "/flow/CaseStudys/Driving-Operational-Excellence-in-HealthTech",
     },
     {
       title: "Driving Scalable Learning Operations with EdTech SaaS",
       image: "/casestudy3-main.png",
-      link: "/flow/CaseStudy/Driving-Scalable-Learning-Operations",
+      link: "/flow/CaseStudys/Driving-Scalable-Learning-Operations",
     },
     {
       title: "Transforming FMCG Sales with Digital Commerce",
       image: "/casestudy4-main.png",
-      link: "/flow/CaseStudy/Transforming-FMCG-Sales-with-Digital-Commerce",
+      link: "/flow/CaseStudys/Transforming-FMCG-Sales-with-Digital-Commerce",
     },
     {
       title: "Driving Omnichannel Growth and Digital Revenue for",
       image: "/casestudy5-main.png",
-      link: "/flow/CaseStudy/Driving-Omnichannel-Growth-and-DigitalRevenue",
+      link: "/flow/CaseStudys/Driving-Omnichannel-Growth-and-DigitalRevenue",
     },
     {
       title: "Transforming Inventory and Procurement Operations for",
       image: "/casestudy6-main.png",
-      link: "/flow/CaseStudy/Transforming-Inventory-and-Procurement",
+      link: "/flow/CaseStudys/Transforming-Inventory-and-Procurement",
     },
   ];
 
@@ -133,7 +133,7 @@ export default function CaseStudy() {
                 {/* Bottom */}
                 <div className="flex justify-between items-center pt-2">
 
-                  <span className="text-black hover:underline font-medium text-sm">
+                  <span className="text-black hover:underline font-medium  text-sm">
                     Learn More →
                   </span>
 
