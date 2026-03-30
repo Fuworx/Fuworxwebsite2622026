@@ -84,12 +84,20 @@ export default function DrivingOmnichannelGrowthandDigitalRevenue() {
             Driving Omnichannel Growth and Digital Revenue for an Apparel Retail Brand through Performance Marketing & Automation
           </h1>
 
-          <div className="relative w-full h-[420px] mb-6">
+          {/* <div className="relative w-full h-[420px] mb-6">
             <Image
               src="/casestudy5-sub.png"
               alt="Case Study"
               fill
               className="object-cover rounded-[20px]"
+            />
+          </div> */}
+
+            <div className="relative w-full h-[420px] mb-6">
+            <img
+              src="/casestudy5-sub.png"
+              alt="Case Study"
+              className="w-full h-full object-cover rounded-[20px]"
             />
           </div>
 

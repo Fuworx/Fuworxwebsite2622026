@@ -107,12 +107,21 @@ export default function TheCompleteDigitalTransformation() {
 
           {/* <div className="mx-auto px-10 py-12 bg-white leading-relaxed" > */}
 
-          <div className="relative w-full h-[420px] ">
+          {/* <div className="relative w-full h-[420px] ">
             <Image
               src="/blog2-sub.png"
               alt="Blog 2"
               fill
               className="object-cover rounded-[20px]"
+            />
+          </div> */}
+
+
+           <div className="relative w-full h-[420px] ">
+            <img
+              src="/blog2-sub.png"
+              alt="Blog 2"
+              className="w-full h-full object-cover rounded-[20px]"
             />
           </div>
 

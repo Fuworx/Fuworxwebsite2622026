@@ -114,12 +114,21 @@ export default function FlowBlog() {
               >
 
                 {/* Image */}
-                <div className="relative w-full h-[140px] rounded-xl overflow-hidden">
+                {/* <div className="relative w-full h-[140px] rounded-xl overflow-hidden">
                   <Image
                     src={blog.image}
                     alt={blog.title}
                     fill
                     className="object-cover"
+                  />
+                </div> */}
+
+
+                <div className=" relative w-full h-[140px] rounded-xl overflow-hidden">
+                  <img
+                    src={blog.image}
+                    alt={blog.title}
+                    className="w-full h-full object-cover"
                   />
                 </div>
 

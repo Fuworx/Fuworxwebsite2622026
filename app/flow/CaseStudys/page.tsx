@@ -114,12 +114,21 @@ export default function CaseStudys() {
               >
 
                 {/* Image */}
-                <div className="relative w-full h-[140px] rounded-xl overflow-hidden">
+                {/* <div className="relative w-full h-[140px] rounded-xl overflow-hidden">
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
                     className="object-cover"
+                  />
+                </div> */}
+
+
+                <div className=" relative w-full h-[140px] rounded-xl overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover"
                   />
                 </div>
 

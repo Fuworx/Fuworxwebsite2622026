@@ -62,7 +62,7 @@ export default function HowaFashionBrandAchieved2XGrowth() {
             <Home size={18} />
           </Link> */}
 
-           <a
+          <a
             href="/"
             className="flex items-center gap-2 hover:text-green-400 cursor-pointer"
           >
@@ -70,7 +70,7 @@ export default function HowaFashionBrandAchieved2XGrowth() {
           </a>
 
           <Link href="/flow/CaseStudys" className="hover:text-green-400">
-          CaseStudys
+            CaseStudys
           </Link>
 
           <span>{">"}</span>
@@ -86,16 +86,27 @@ export default function HowaFashionBrandAchieved2XGrowth() {
         <div className="w-full text-s mx-auto px-6 py-10 font-openSans">
 
           <h1 className="text-4xl font-bold mb-6">
-            How a Fashion Brand Achieved 2X Growth 
+            How a Fashion Brand Achieved 2X Growth
             with Digital & Social Commerce
           </h1>
 
-          <div className="relative w-full h-[420px] mb-6">
+          {/* <div className="relative w-full h-[420px] mb-6">
             <Image
               src="/casestudy1-sub.png"
               alt="Case Study"
               fill
               className="object-cover rounded-[20px]"
+            />
+          </div> */}
+
+
+
+
+          <div className="relative w-full h-[420px] mb-6">
+            <img
+              src="/casestudy1-sub.png"
+              alt="Case Study"
+              className="w-full h-full object-cover rounded-[20px]"
             />
           </div>
 
@@ -107,20 +118,20 @@ export default function HowaFashionBrandAchieved2XGrowth() {
           <h2 className="text-2xl font-semibold mt-6">About the Client</h2>
 
           <p>
-            A fast-growing fashion and apparel retailer with both offline stores and an emerging 
-            online presence wanted to scale its digital commerce operations and improve customer 
+            A fast-growing fashion and apparel retailer with both offline stores and an emerging
+            online presence wanted to scale its digital commerce operations and improve customer
             engagement.
           </p>
 
           <p>
-            The brand struggled with fragmented digital channels, poor online conversions, and 
+            The brand struggled with fragmented digital channels, poor online conversions, and
             inefficient marketing processes that limited its growth potential.
           </p>
 
           <p>
-            With support from Fuworx Innovations Pvt Ltd, the company implemented a 
-            comprehensive digital commerce transformation strategy to optimize its e-commerce 
-            platform, automate marketing campaigns, and enhance the customer shopping 
+            With support from Fuworx Innovations Pvt Ltd, the company implemented a
+            comprehensive digital commerce transformation strategy to optimize its e-commerce
+            platform, automate marketing campaigns, and enhance the customer shopping
             experience.
           </p>
 
@@ -143,8 +154,8 @@ export default function HowaFashionBrandAchieved2XGrowth() {
           <p><strong>Business Context</strong></p>
 
           <p>
-            The client’s existing e-commerce platform was slow, difficult to navigate, and not 
-            optimized for mobile shoppers, resulting in poor customer experience and low 
+            The client’s existing e-commerce platform was slow, difficult to navigate, and not
+            optimized for mobile shoppers, resulting in poor customer experience and low
             conversions.
           </p>
 
@@ -184,7 +195,7 @@ export default function HowaFashionBrandAchieved2XGrowth() {
           <p><strong>Business Context</strong></p>
 
           <p>
-            The fashion brand relied heavily on manual marketing campaigns, limiting 
+            The fashion brand relied heavily on manual marketing campaigns, limiting
             personalization and engagement with customers.
           </p>
 
@@ -223,7 +234,7 @@ export default function HowaFashionBrandAchieved2XGrowth() {
           <p><strong>Business Context</strong></p>
 
           <p>
-            The client operated both retail stores and online channels, but inventory systems were 
+            The client operated both retail stores and online channels, but inventory systems were
             disconnected, causing stock visibility issues.
           </p>
 
@@ -262,8 +273,8 @@ export default function HowaFashionBrandAchieved2XGrowth() {
           <p><strong>Business Context</strong></p>
 
           <p>
-            The fashion brand had active social media pages but was unable to convert 
-            engagement into actual sales. Social media traffic was high, but purchase conversion 
+            The fashion brand had active social media pages but was unable to convert
+            engagement into actual sales. Social media traffic was high, but purchase conversion
             remained low.
           </p>
 
@@ -314,7 +325,7 @@ export default function HowaFashionBrandAchieved2XGrowth() {
           <p><strong>Business Context</strong></p>
 
           <p>
-            The brand wanted to expand its digital reach through online marketplaces but faced 
+            The brand wanted to expand its digital reach through online marketplaces but faced
             challenges managing multiple sales channels.
           </p>
 
@@ -352,7 +363,7 @@ export default function HowaFashionBrandAchieved2XGrowth() {
 
           <p>
             Through its digital commerce transformation initiative,<strong> Fuworx Innovations Pvt Ltd </strong>
-            helped the fashion retailer build a scalable and customer-centric e-commerce 
+            helped the fashion retailer build a scalable and customer-centric e-commerce
             ecosystem.
           </p>
 
@@ -367,8 +378,8 @@ export default function HowaFashionBrandAchieved2XGrowth() {
           <h2 className="text-2xl font-semibold mt-6">Conclusion</h2>
 
           <p>
-            By combining technology, marketing, and analytics, Fuworx enabled the fashion brand 
-            to transform from a traditional retailer into a digitally driven, customer-centric 
+            By combining technology, marketing, and analytics, Fuworx enabled the fashion brand
+            to transform from a traditional retailer into a digitally driven, customer-centric
             commerce business—unlocking sustainable growth and competitive advantage.
           </p>
 

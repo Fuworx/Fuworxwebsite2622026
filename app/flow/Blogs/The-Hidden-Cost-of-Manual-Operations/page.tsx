@@ -102,12 +102,20 @@ export default function TheHiddenCostofManualOperations() {
             The Hidden Cost of Manual Operations
           </h1>
 
-          <div className="relative w-full h-[420px] ">
+          {/* <div className="relative w-full h-[420px] ">
             <Image
               src="/blog3-sub.png"
               alt="Blog 3"
               fill
               className="object-cover rounded-[20px]"
+            />
+          </div> */}
+
+           <div className="relative w-full h-[420px] ">
+            <img
+              src="/blog3-sub.png"
+              alt="Blog 3"
+              className="w-full h-full object-cover rounded-[20px]"
             />
           </div>
 

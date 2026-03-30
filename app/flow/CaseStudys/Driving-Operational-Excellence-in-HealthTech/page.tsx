@@ -83,12 +83,21 @@ export default function DrivingOperationalExcellenceinHealthTech() {
             Driving Operational Excellence in HealthTech with HMS
           </h1>
 
-          <div className="relative w-full h-[420px] mb-6">
+          {/* <div className="relative w-full h-[420px] mb-6">
             <Image
               src="/casestudy2-sub.png"
               alt="Case Study"
               fill
               className="object-cover rounded-[20px]"
+            />
+          </div> */}
+
+
+           <div className="relative w-full h-[420px] mb-6">
+            <img
+              src="/casestudy2-sub.png"
+              alt="Case Study"
+              className="w-full h-full object-cover rounded-[20px]"
             />
           </div>
 

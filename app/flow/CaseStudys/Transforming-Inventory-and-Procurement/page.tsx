@@ -84,12 +84,20 @@ export default function ManufacturingCaseStudy() {
             through Digital Automation
           </h1>
 
-          <div className="relative w-full h-[420px] mb-8">
+          {/* <div className="relative w-full h-[420px] mb-8">
             <Image
               src="/casestudy6-sub.png"
               alt="Case Study"
               fill
               className="object-cover rounded-[20px]"
+            />
+          </div> */}
+
+            <div className="relative w-full h-[420px] mb-6">
+            <img
+              src="/casestudy6-sub.png"
+              alt="Case Study"
+              className="w-full h-full object-cover rounded-[20px]"
             />
           </div>
 

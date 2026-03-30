@@ -106,15 +106,24 @@ export default function OmnichannelCommerce() {
             Omnichannel Commerce: Why Businesses Must Sell Everywhere
           </h1>
 
-          <div className="relative w-full h-[420px] ">
+          {/* <div className="relative w-full h-[420px] ">
             <Image
               src="/blog4-sub.png"
               alt="Blog 4"
               fill
               className="object-cover rounded-[20px]"
             />
+          </div> */}
+
+           <div className="relative w-full h-[420px] ">
+            <img
+              src="/blog4-sub.png"
+              alt="Blog 4"
+              className="w-full h-full object-cover rounded-[20px]"
+            />
           </div>
 
+ 
 
 
           {/* META */}

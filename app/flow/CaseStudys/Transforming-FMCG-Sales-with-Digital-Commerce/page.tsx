@@ -79,12 +79,20 @@ export default function TransformingFMCGSaleswithDigitalCommerce() {
             Transforming FMCG Sales with Digital Commerce & Omnichannel Strategy
           </h1>
 
-          <div className="relative w-full h-[420px]">
+          {/* <div className="relative w-full h-[420px]">
             <Image
               src="/casestudy4-sub.png"
               alt="Case Study 4"
               fill
               className="object-cover rounded-[20px]"
+            />
+          </div> */}
+
+            <div className="relative w-full h-[420px] mb-6">
+            <img
+              src="/casestudy4-sub.png"
+              alt="Case Study"
+              className="w-full h-full object-cover rounded-[20px]"
             />
           </div>
 

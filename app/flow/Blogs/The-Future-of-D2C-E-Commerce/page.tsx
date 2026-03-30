@@ -102,12 +102,21 @@ export default function TheFutureofD2CECommerce() {
             The Future of D2C E-Commerce: How Brands Are Redefining Digital Commerce
           </h1>
 
-          <div className="relative w-full h-[420px] ">
+          {/* <div className="relative w-full h-[420px] ">
             <Image
               src="/blog1-sub.png"
               alt="Blog 1"
               fill
               className="object-cover rounded-[20px]"
+            />
+          </div> */}
+
+          
+          <div className="relative w-full h-[420px] ">
+            <img
+              src="/blog1-sub.png"
+              alt="Blog 1"
+             className="w-full h-full object-cover rounded-[20px]"
             />
           </div>
 

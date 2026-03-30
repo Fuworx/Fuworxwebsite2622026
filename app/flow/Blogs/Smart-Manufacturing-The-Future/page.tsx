@@ -102,12 +102,20 @@ export default function SmartManufacturingTheFuture() {
             Smart Manufacturing: The Future of Industry Operations
           </h1>
 
-          <div className="relative w-full h-[420px] ">
+          {/* <div className="relative w-full h-[420px] ">
             <Image
               src="/blog6-sub.png"
               alt="Blog 6"
               fill
               className="object-cover rounded-[20px]"
+            />
+          </div> */}
+
+           <div className="relative w-full h-[420px] ">
+            <img
+              src="/blog6-sub.png"
+              alt="Blog 6"
+              className="w-full h-full object-cover rounded-[20px]"
             />
           </div>
 
